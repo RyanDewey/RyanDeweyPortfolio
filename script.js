@@ -35,8 +35,8 @@ document.querySelectorAll('.fade-in').forEach(el => {
 function downloadResume() {
     // This will open the resume in a new tab and trigger download
     const link = document.createElement('a');
-    link.href = 'RyanDeweyResume.pdf'; // Replace with actual path to your resume
-    link.download = 'Ryan_Dewey_Resume.pdf';
+    link.href = 'images/RyanDeweyResume.pdf'; // Replace with actual path to your resume
+    link.download = 'RyanDeweyResume.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
@@ -50,5 +50,11 @@ window.addEventListener('scroll', () => {
         nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
     } else {
         nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+    }
+
+    if (window.scrollY > 850) {
+        nav.classList.add('scrolled');
+    } else {
+        nav.classList.remove('scrolled');
     }
 });
