@@ -5,124 +5,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan J. Dewey</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#resume">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="#" class="nav-logo">RD</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
     </nav>
 
-    <section id="hero">
-        <div class="container">
+    <section class="hero">
+        <div class="hero-content">
             <h1>Ryan J. Dewey</h1>
-            <p class="subtitle">Computer Science and Engineering @ UCLA</p>
-            <a href="#projects" class="cta-button">View My Work</a>
+            <p class="subtitle">Computer Science & Engineering Student @ UCLA</p>
+            <a href="#contact" class="cta-button">Get In Touch</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-image">
+                <img src=""
+            </div>
+            <div class="about-text">
+                <h3>Developer & Leader</h3>
+                <p>I'm a third-year Computer Science and Engineering student at UCLA, recently transferred from community college where I graduated summa cum laude. I'm passionate about building impactful software solutions and leading teams to create meaningful projects.</p>
+                <p>Currently, I'm exploring the exciting world of brain-computer interfaces and neurotech as a Team Lead for CruX UCLA's Neurotech Competition team. I also develop with the ACM Dev Team and previously founded The CodeBase, a web development program that generated $6,000+ in revenue building websites for local businesses and non-profits.</p>
+                <p>When I'm not coding, you'll find me catching waves while surfing, strategizing over chess, playing piano and violin, hitting the golf course, or learning Mandarin.</p>
+                <div class="hobbies">
+                    <span class="hobby-tag">🏄 Surfing</span>
+                    <span class="hobby-tag">♟️ Chess</span>
+                    <span class="hobby-tag">🎹 Piano</span>
+                    <span class="hobby-tag">🎻 Violin</span>
+                    <span class="hobby-tag">⛳ Golf</span>
+                    <span class="hobby-tag">🇨🇳 Learning Mandarin</span>
+                </div>
+            </div>
         </div>
     </section>
 
     <section id="projects">
-        <div class="container">
-            <h2>Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">🚀</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Meridian</h3>
-                        <p class="project-description">An ETL pipeline to aggregate and normalize business, demographic, and geographic data, finding high demand locations based on business type.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Pandas</span>
-                            <span class="tech-tag">PostgreSQL</span>
-                        </div>
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+            <div class="project-card fade-in">
+                <div class="project-demo">
+                    <video class="demo-placeholder" controls>
+                        <source src="placeholder-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-content">
+                    <h3>Silverfish</h3>
+                    <p>Go-based web crawler and scraper that compiles information from restaurant websites and exports it to CSV for sales and marketing workflows.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Go</span>
+                        <span class="tech-tag">Web Scraping</span>
+                        <span class="tech-tag">Concurrency</span>
+                        <span class="tech-tag">CSV</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/RyanDewey/silverfish" target="_blank" class="project-link">View Code</a>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-image">💡</div>
-                    <div class="project-content">
-                        <h3 class="project-title">Silverfish</h3>
-                        <p class="project-description">A Go based Web Crawler that crawls restaurant websites by location and exports contact information to CSV files for sales/marketing workflows.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Go</span>
-                        </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-demo">
+                    <video class="demo-placeholder" controls>
+                        <source src="placeholder-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-content">
+                    <h3>Meridian</h3>
+                    <p>Python-based data pipeline that uses demographic and business data to map out geographic areas by market demand and showcase a demand heatmap on a webapp.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Data Visualization</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/RyanDewey/meridian" target="_blank" class="project-link">View Code</a>
                     </div>
                 </div>
-                
-                <div class="project-card">
-                    <div class="project-image">🎨</div>
-                    <div class="project-content">
-                        <h3 class="project-title">EEG Signal Processing Pipeline</h3>
-                        <p class="project-description">Analyzes raw brainwave data across multiple subjects using power spectral density (PSD) analysis and extracts bandpower features to quantify neural oscillations.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">MNE-Python</span>
-                            <span class="tech-tag">Matplotlib</span>
-                        </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <div class="project-demo">
+                    <video class="demo-placeholder" controls>
+                        <source src="placeholder-demo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="project-content">
+                    <h3>EEG Signal Processing</h3>
+                    <p>Uses PhysioNet's motor imagery dataset to filter and extract features from EEG data, graphing band power of brain waves using matplotlib.</p>
+                    <div class="tech-stack">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">MNE</span>
+                        <span class="tech-tag">Jupyter</span>
+                        <span class="tech-tag">Matplotlib</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/RyanDewey/EEG-Processing-Pipeline" target="_blank" class="project-link">View Code</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="resume">
-        <div class="container">
-            <h2>Experience & Skills</h2>
-            <div class="resume-grid">
-                <div class="resume-card">
-                    <h3>Founder and Software Developer</h3>
-                    <div class="company">Dart Ordering</div>
-                    <div class="date">Dec 2024 - Present</div>
-                    <ul>
-                        <li>Creating an online ordering SaaS for restaurants, enabling online ordering and customer data insights.</li>
-                        <li>Developed a multi-tenant web app using React, TypeScript, Node.js, and PostgreSQL to serve multiple restaurants.</li>
-                        <li>Conducted customer discovery with multiple restaurant owners; validated demand for the solution and secured interest in pilot partnerships prior to launch.</li>
-                        <li>Implemented advanced features including JWT authentication with refresh token rotation, dynamic multi-tenant theming, and point-of-sale order routing based on client-specific configurations.</li>
-                    </ul>
+    <section id="skills">
+        <h2 class="section-title">Skills</h2>
+        <div class="skills-container">
+            <div class="skill-category fade-in">
+                <h3>💻 Languages</h3>
+                <div class="skill-list">
+                    <span class="skill-item">Python</span>
+                    <span class="skill-item">Go</span>
+                    <span class="skill-item">JavaScript</span>
+                    <span class="skill-item">TypeScript</span>
+                    <span class="skill-item">C++</span>
+                    <span class="skill-item">Java</span>
+                    <span class="skill-item">SQL</span>
+                    <span class="skill-item">HTML/CSS</span>
+                    <span class="skill-item">ARM Assembly</span>
                 </div>
-                
-                <div class="resume-card">
-                    <h3>Founder and President</h3>
-                    <div class="company">The CodeBase</div>
-                    <div class="date">May 2024 - June 2025</div>
-                    <ul>
-                        <li>Founded a web development program at Saddleback College that builds websites for local non-profits and businesses.</li>
-                        <li>Recruited and led a 40+ member team, managing development for 6 client projects.</li>
-                        <li>Generated $6,000+ in revenue within the first semester by delivering production-ready solutions to paying clients.</li>
-                    </ul>
-                </div>
-                
             </div>
-            
-            <div class="skills">
-                <span class="skill">Python</span>
-                <span class="skill">Go</span>
-                <span class="skill">JavaScript</span>
-                <span class="skill">TypeScript</span>
-                <span class="skill">React</span>
-                <span class="skill">Node.js</span>
-                <span class="skill">C++</span>
-                <span class="skill">Java</span>
-                <span class="skill">SQL</span>
-                <span class="skill">PostgreSQL</span>
+
+            <div class="skill-category fade-in">
+                <h3>🛠️ Frameworks & Libraries</h3>
+                <div class="skill-list">
+                    <span class="skill-item">React</span>
+                    <span class="skill-item">Node.js</span>
+                    <span class="skill-item">Express</span>
+                    <span class="skill-item">ROS2</span>
+                    <span class="skill-item">React Native</span>
+                    <span class="skill-item">Redux</span>
+                    <span class="skill-item">MNE-Python</span>
+                    <span class="skill-item">Pandas</span>
+                    <span class="skill-item">OpenCV</span>
+                    <span class="skill-item">Matplotlib</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <h3>⚙️ Tools & Platforms</h3>
+                <div class="skill-list">
+                    <span class="skill-item">PostgreSQL</span>
+                    <span class="skill-item">Docker</span>
+                    <span class="skill-item">Linux</span>
+                    <span class="skill-item">Git/GitHub</span>
+                    <span class="skill-item">Auth0</span>
+                    <span class="skill-item">Jupyter</span>
+                    <span class="skill-item">Verse</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="leadership">
+        <h2 class="section-title">Leadership & Activities</h2>
+        <div class="leadership-grid">
+            <div class="leadership-card fade-in">
+                <h3>CruX UCLA</h3>
+                <p class="role">Team Lead - Neurotech Competition</p>
+                <p>Leading a team in developing brain-computer interface solutions for the annual Neurotech Competition. Focusing on EEG signal processing and machine learning applications in neurotech.</p>
+            </div>
+
+            <div class="leadership-card fade-in">
+                <h3>ACM @ UCLA</h3>
+                <p class="role">Developer - Dev Team</p>
+                <p>Contributing to full-stack development projects as part of UCLA's largest tech community. Building web applications and collaborating with fellow developers on innovative solutions.</p>
+            </div>
+
+            <div class="leadership-card fade-in">
+                <h3>The CodeBase</h3>
+                <p class="role">Founder & President</p>
+                <p>Founded and led a 40+ member web development program at Saddleback College. Generated $6,000+ in revenue by delivering production-ready websites for local non-profits and businesses.</p>
+            </div>
+
+            <div class="leadership-card fade-in">
+                <h3>Dart Ordering</h3>
+                <p class="role">Founder & Software Developer</p>
+                <p>Creating an online ordering SaaS platform for restaurants. Conducted customer discovery with multiple restaurant owners and secured pilot partnerships prior to launch.</p>
             </div>
         </div>
     </section>
 
     <section id="contact">
-        <div class="container">
-            <h2>Let's Work Together</h2>
-            <p class="subtitle">I'm always interested in hearing about new projects and opportunities.</p>
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-content">
+            <p>I'm actively seeking software engineering, ML, and data science internships for Summer 2026. Let's connect!</p>
+            
             <div class="contact-links">
-                <a href="mailto:ryandewey6@icloud.com" class="contact-link" target="_blank">Email Me</a>
-                <a href="https://linkedin.com/in/ryandewey4" class="contact-link" target="_blank">LinkedIn</a>
-                <a href="https://github.com/RyanDewey" class="contact-link" target="_blank">GitHub</a>
+                <div class="contact-item">
+                    <span>📧 Email</span>
+                    <a href="mailto:ryanjdewey@ucla.edu">ryanjdewey@ucla.edu</a>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/ryandewey4" target="_blank" class="social-link" title="LinkedIn">
+                    💼
+                </a>
+                <a href="https://github.com/RyanDewey" target="_blank" class="social-link" title="GitHub">
+                    🐙
+                </a>
+                <a href="#" onclick="downloadResume(); return false;" class="social-link" title="Download Resume">
+                    📄
+                </a>
             </div>
         </div>
     </section>
+
+    <footer>
+        <p>&copy; 2025 Ryan Dewey.</p>
+    </footer>
+
 </body>
 </html>
