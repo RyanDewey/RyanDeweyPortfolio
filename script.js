@@ -58,3 +58,47 @@ window.addEventListener('scroll', () => {
         nav.classList.remove('scrolled');
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const nav = document.querySelector('.nav');
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.getElementById('nav-links');
+
+  if (!nav || !toggle || !links) {
+    // If markup isn't present, just do nothing.
+    return;
+  }
+
+  function setOpen(isOpen) {
+    nav.classList.toggle('nav--open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  }
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    setOpen(!nav.classList.contains('nav--open'));
+  });
+
+  // Close when clicking a link
+  links.addEventListener('click', (e) => {
+    const a = e.target && e.target.closest && e.target.closest('a');
+    if (a) setOpen(false);
+  });
+
+  // Close on outside click
+  document.addEventListener('click', (e) => {
+    if (!nav.classList.contains('nav--open')) return;
+    if (!nav.contains(e.target)) setOpen(false);
+  });
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setOpen(false);
+  });
+
+  // Reset if resizing back to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) setOpen(false);
+  });
+});

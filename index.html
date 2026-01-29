@@ -5,13 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ryan J. Dewey</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <nav class="nav">
         <div class="nav-content">
             <a href="#" class="nav-logo">RJD</a>
-            <ul class="nav-links">
+
+            <button class="nav-toggle" type="button"
+                    aria-expanded="false"
+                    aria-controls="nav-links"
+                    aria-label="Open menu">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#skills">Skills</a></li>
@@ -33,7 +43,7 @@
         <h2 class="section-title">About Me</h2>
         <div class="about-content">
             <div class="about-image">
-                <img class="about-image" src="images/ProfPic.jpg">
+                <img class="about-image" src="images/ryanPic.jpg">
             </div>
             <div class="about-text">
                 <h3>Developer & Leader</h3>
@@ -46,7 +56,7 @@
                     <span class="hobby-tag">🎹 Piano</span>
                     <span class="hobby-tag">🎻 Violin</span>
                     <span class="hobby-tag">⛳ Golf</span>
-                    <span class="hobby-tag">🇨🇳 Learning Mandarin</span>
+                    <span class="hobby-tag">🇨🇳 Mandarin</span>
                 </div>
             </div>
         </div>
@@ -58,7 +68,7 @@
             <div class="project-card fade-in">
                 <div class="project-demo">
                     <video class="demo-placeholder" autoplay loop muted playsinline>
-                        <source src="placeholder-demo.mp4" type="video/mp4">
+                        <source src="videos/SilverfishDemo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -80,16 +90,16 @@
             <div class="project-card fade-in">
                 <div class="project-demo">
                     <video class="demo-placeholder" autoplay loop muted playsinline>
-                        <source src="placeholder-demo.mp4" type="video/mp4">
+                        <source src="videos/MeridianDemo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <div class="project-content">
                     <h3>Meridian</h3>
-                    <p>Python-based data pipeline that uses demographic and business data to map out geographic areas by market demand and showcase a demand heatmap on a webapp.</p>
+                    <p>Data pipeline that uses demographic and business data to visualize market demand geographically.</p>
                     <div class="tech-stack">
                         <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Pandas</span>
+                        <span class="tech-tag">SQL</span>
                         <span class="tech-tag">PostgreSQL</span>
                         <span class="tech-tag">Data Visualization</span>
                     </div>
@@ -101,10 +111,8 @@
 
             <div class="project-card fade-in">
                 <div class="project-demo">
-                    <video class="demo-placeholder" autoplay loop muted playsinline`>
-                        <source src="placeholder-demo.mp4" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
+                    <img src="images/bandpower.png">
+                    
                 </div>
                 <div class="project-content">
                     <h3>EEG Signal Processing</h3>
@@ -138,6 +146,7 @@
                     <span class="skill-item">SQL</span>
                     <span class="skill-item">HTML/CSS</span>
                     <span class="skill-item">ARM Assembly</span>
+                    <span class="skill-item">MATLAB</span>
                 </div>
             </div>
 
@@ -175,6 +184,17 @@
     <section id="leadership">
         <h2 class="section-title">Leadership & Activities</h2>
         <div class="leadership-grid">
+            <div class="leadership-card fade-in dart-card">
+                <h3>Dart Ordering</h3>
+                <p class="role">Founder & Software Developer</p>
+                <p>
+                    Dart Ordering is a multi-tenant SaaS platform that gives independent restaurants modern online ordering and access to their own customer data without upfront costs. The goal is to help restaurants own their digital presence and margins instead of relying entirely on third-party delivery platforms. Each restaurant runs on its own branded website, while the platform operates as a single shared system designed to scale across many businesses.
+                    <br><br>The application is built as a multi-tenant system, where restaurant context is resolved dynamically, allowing one codebase to serve many restaurants efficiently. The frontend is built with React and TypeScript, and the backend uses Node.js and TypeScript with a clean separation between API routes and business logic. PostgreSQL is used to model restaurants, menus, orders, and users in a structured, analytics-friendly way.
+                    <br><br>The system is designed with data as a first-class feature, capturing structured order data to support analytics and future insights. Long-term, Dart Ordering aims to become a full operating platform for independent restaurants, combining ordering, data, and growth tools into a single scalable product.
+                </p>
+            </div>
+        </div>
+        <div class="leadership-grid">
             <div class="leadership-card fade-in">
                 <h3>CruX UCLA</h3>
                 <p class="role">Team Lead - Neurotech Competition</p>
@@ -193,11 +213,6 @@
                 <p>Founded and led a 40+ member web development program at Saddleback College. Generated $6,000+ in revenue by delivering production-ready websites for local non-profits and businesses.</p>
             </div>
 
-            <div class="leadership-card fade-in">
-                <h3>Dart Ordering</h3>
-                <p class="role">Founder & Software Developer</p>
-                <p>Creating an online ordering SaaS platform for restaurants. Conducted customer discovery with multiple restaurant owners and secured pilot partnerships prior to launch.</p>
-            </div>
         </div>
     </section>
 
@@ -215,7 +230,7 @@
 
             <div class="social-links">
                 <a href="https://www.linkedin.com/in/ryandewey4" target="_blank" class="social-link" title="LinkedIn">
-                    <img src="images/linkedin.png" width="50px">
+                    <img src="images/linkedin.webp" width="50px">
                 </a>
                 <a href="https://github.com/RyanDewey" target="_blank" class="social-link" title="GitHub">
                     <img src="images/github.png" width="36px">
