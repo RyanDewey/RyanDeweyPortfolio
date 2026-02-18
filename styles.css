@@ -332,6 +332,22 @@ section {
     font-size: 0.85rem;
     color: var(--primary);
     font-weight: 600;
+    display: inline-block;
+    transition: transform 0.2s ease;
+    transform-origin: center;
+}
+
+.tech-tag:hover {
+    animation: tech-tag-pop 0.2s ease forwards;
+}
+
+@keyframes tech-tag-pop {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.08);
+    }
 }
 
 .project-links {
