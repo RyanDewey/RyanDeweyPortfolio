@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroKeys — Ryan J. Dewey</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="project.js" defer></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">RJD</a>
+            <button class="nav-toggle" type="button"
+                    aria-expanded="false"
+                    aria-controls="nav-links"
+                    aria-label="Open menu">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#leadership">Leadership</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="project-page-hero">
+        <div class="project-page-hero-content">
+            <a href="../index.html#projects" class="back-link">← Projects</a>
+            <h1>NeuroKeys</h1>
+            <p class="project-tagline">Brain-Computer Interface Piano &middot; CruX UCLA &middot; 1st Place, California Neurotech Conference</p>
+        </div>
+    </div>
+
+    <div class="project-detail-body">
+
+        <div class="project-detail-video-wrapper fade-in">
+            <video autoplay loop muted playsinline>
+                <source src="../videos/EegPiano.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Overview</h2>
+            <p>NeuroKeys is a brain-computer interface piano developed by Ryan Dewey and the CruX UCLA Neurotech Competition team — and the project that won 1st place at the annual California Neurotech Conference. The system lets users select and play piano keys using only biosignals — no hands required.</p>
+            <p>The project combines two signal modalities: EEG (electroencephalography) for determining which key the user intends to play, and EMG (electromyography) for triggering when a note fires. Together they create an intuitive, low-latency interface for controlling the instrument purely through brain activity and voluntary muscle movement.</p>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Technical Approach</h2>
+            <div class="tech-approach-grid">
+                <div class="tech-approach-card">
+                    <h3>Key Selection — SSVEP + FBTRCA</h3>
+                    <p>Each piano key is associated with a flickering visual stimulus at a distinct frequency. When the user focuses on a key, their visual cortex generates steady-state visual evoked potentials (SSVEP) — brainwave oscillations locked to that stimulus frequency. The FBTRCA (Filter Bank Task-Related Component Analysis) algorithm processes multi-channel EEG data across multiple frequency bands to accurately decode which key the user is attending to.</p>
+                </div>
+                <div class="tech-approach-card">
+                    <h3>Note Triggering — EMG + SVM</h3>
+                    <p>A Support Vector Machine (SVM) classifier trained on surface EMG signals detects voluntary muscle contractions. When the user makes a deliberate movement, the classifier fires the selected note. This cleanly separates <em>selection</em> intent from <em>play</em> intent, giving the user precise control over note timing without accidental triggers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Tech Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">SSVEP</span>
+                <span class="tech-tag">FBTRCA</span>
+                <span class="tech-tag">EMG</span>
+                <span class="tech-tag">SVM</span>
+                <span class="tech-tag">MNE-Python</span>
+                <span class="tech-tag">NumPy</span>
+                <span class="tech-tag">Signal Processing</span>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="../images/bandpower.png" alt="EEG Band Power Analysis">
+                </div>
+                <div class="gallery-placeholder">
+                    <span>🖼️</span>
+                    Coming soon
+                </div>
+                <div class="gallery-placeholder">
+                    <span>🖼️</span>
+                    Coming soon
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <div class="project-detail-links">
+                <a href="https://github.com/RyanDewey/EEG-Processing-Pipeline" target="_blank" class="project-link">View Code</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ryan Dewey.</p>
+    </footer>
+</body>
+</html>

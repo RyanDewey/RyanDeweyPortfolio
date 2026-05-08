@@ -283,6 +283,19 @@ section {
     object-fit: cover;
 }
 
+/* Zoom into top-left of a video — important content is in that quadrant */
+.zoom-top-left {
+    transform: scale(1.7);
+    transform-origin: left top;
+    object-position: 4% top;
+}
+
+.zoom-top-left-sm {
+    transform: scale(1.2);
+    transform-origin: left top;
+    object-position: 4% top;
+}
+
 .project-demo img {
     width: 100%;
     height: 100%;
@@ -837,4 +850,213 @@ footer {
   .nav-content {
     position: relative;
   }
+}
+
+/* =========================================================
+   PROJECT DETAIL PAGES
+   ========================================================= */
+
+.project-page-hero {
+    min-height: 360px;
+    display: flex;
+    align-items: flex-end;
+    padding: 2rem 2rem 3rem;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 60%, #3b82f6 100%);
+    position: relative;
+    overflow: hidden;
+    max-width: none;
+    margin: 0;
+}
+
+.project-page-hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.project-page-hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 1.25rem;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+.project-page-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+    letter-spacing: -1.5px;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project-page-hero .project-tagline {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.project-detail-body {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+}
+
+.project-detail-video-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    margin-bottom: 4rem;
+    aspect-ratio: 16 / 9;
+}
+
+.project-detail-video-wrapper video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.detail-section {
+    margin-bottom: 3.5rem;
+}
+
+.detail-section h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid var(--light-gray);
+    position: relative;
+}
+
+.detail-section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+}
+
+.detail-section p {
+    color: var(--gray);
+    font-size: 1.05rem;
+    line-height: 1.85;
+    margin-bottom: 1rem;
+}
+
+.tech-approach-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.tech-approach-card {
+    background: var(--light-gray);
+    border-radius: 16px;
+    padding: 1.75rem;
+    border-left: 4px solid var(--primary);
+}
+
+.tech-approach-card h3 {
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8rem;
+}
+
+.tech-approach-card p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.75;
+    margin: 0;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.gallery-item {
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.04);
+}
+
+.gallery-placeholder {
+    aspect-ratio: 4 / 3;
+    background: var(--light-gray);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray);
+    font-size: 0.85rem;
+    gap: 0.5rem;
+    border: 2px dashed #cbd5e1;
+}
+
+.gallery-placeholder span {
+    font-size: 1.5rem;
+}
+
+.project-detail-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+    .project-page-hero h1 {
+        font-size: 2.25rem;
+        letter-spacing: -0.5px;
+    }
+
+    .tech-approach-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }

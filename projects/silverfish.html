@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silverfish — Ryan J. Dewey</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="project.js" defer></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">RJD</a>
+            <button class="nav-toggle" type="button"
+                    aria-expanded="false"
+                    aria-controls="nav-links"
+                    aria-label="Open menu">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#leadership">Leadership</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="project-page-hero">
+        <div class="project-page-hero-content">
+            <a href="../index.html#projects" class="back-link">← Projects</a>
+            <h1>Silverfish</h1>
+            <p class="project-tagline">Go-based Web Crawler &amp; Scraper</p>
+        </div>
+    </div>
+
+    <div class="project-detail-body">
+
+        <div class="project-detail-video-wrapper fade-in">
+            <video autoplay loop muted playsinline>
+                <source src="../videos/SilverfishDemo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Overview</h2>
+            <p>Silverfish is a concurrent web crawler and scraper written in Go, purpose-built for aggregating structured data from restaurant websites. Given a list of seed URLs, it crawls each site, extracts relevant business information, and exports everything to a clean CSV file ready for sales and marketing workflows.</p>
+            <p>The tool was built to solve a real need: manually researching restaurant websites is slow and inconsistent. Silverfish automates that process at scale, leveraging Go's goroutine model to crawl multiple sites concurrently without blocking.</p>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Technical Approach</h2>
+            <div class="tech-approach-grid">
+                <div class="tech-approach-card">
+                    <h3>Concurrent Crawling</h3>
+                    <p>Silverfish uses Go's goroutine and channel model to crawl multiple restaurant websites in parallel. A worker pool limits concurrency to avoid overwhelming targets, while a shared visited map with mutex locking prevents duplicate requests across goroutines.</p>
+                </div>
+                <div class="tech-approach-card">
+                    <h3>Data Extraction &amp; Export</h3>
+                    <p>HTML is parsed using Go's standard library to locate and extract relevant fields — contact info, hours, menu links, and more. Results are streamed into a structured CSV using Go's encoding/csv package, making the output immediately usable in spreadsheet or CRM tools.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Tech Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Go</span>
+                <span class="tech-tag">Web Scraping</span>
+                <span class="tech-tag">Concurrency</span>
+                <span class="tech-tag">Goroutines</span>
+                <span class="tech-tag">CSV</span>
+                <span class="tech-tag">HTML Parsing</span>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-placeholder">
+                    <span>🖼️</span>
+                    Coming soon
+                </div>
+                <div class="gallery-placeholder">
+                    <span>🖼️</span>
+                    Coming soon
+                </div>
+                <div class="gallery-placeholder">
+                    <span>🖼️</span>
+                    Coming soon
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <div class="project-detail-links">
+                <a href="https://github.com/RyanDewey/silverfish" target="_blank" class="project-link">View Code</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ryan Dewey.</p>
+    </footer>
+</body>
+</html>

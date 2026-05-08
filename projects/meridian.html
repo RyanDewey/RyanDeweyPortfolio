@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meridian — Ryan J. Dewey</title>
+    <link rel="stylesheet" href="../styles.css">
+    <script src="project.js" defer></script>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <a href="../index.html" class="nav-logo">RJD</a>
+            <button class="nav-toggle" type="button"
+                    aria-expanded="false"
+                    aria-controls="nav-links"
+                    aria-label="Open menu">
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+                <span class="nav-toggle__bar"></span>
+            </button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../index.html#about">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="../index.html#skills">Skills</a></li>
+                <li><a href="../index.html#leadership">Leadership</a></li>
+                <li><a href="../index.html#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="project-page-hero">
+        <div class="project-page-hero-content">
+            <a href="../index.html#projects" class="back-link">← Projects</a>
+            <h1>Meridian</h1>
+            <p class="project-tagline">Geographic Market Intelligence Platform</p>
+        </div>
+    </div>
+
+    <div class="project-detail-body">
+
+        <div class="project-detail-video-wrapper fade-in">
+            <video autoplay loop muted playsinline>
+                <source src="../videos/MeridianDemo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Overview</h2>
+            <p>Meridian is a data pipeline and visualization tool that combines demographic and business datasets to map market demand geographically. Given a target industry or business type, it surfaces where demand is high and supply is low — identifying underserved markets at a glance.</p>
+            <p>The project was born from a practical question: where should a new business open? Meridian answers that by pulling structured data into PostgreSQL, running queries to score geographic areas, and rendering the results as an interactive map.</p>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Technical Approach</h2>
+            <div class="tech-approach-grid">
+                <div class="tech-approach-card">
+                    <h3>Data Pipeline</h3>
+                    <p>Raw demographic and business data is ingested, cleaned, and loaded into a PostgreSQL database using a Python ETL pipeline. SQL queries join and aggregate the datasets by geographic region, computing demand-to-supply ratios that score each area's market potential.</p>
+                </div>
+                <div class="tech-approach-card">
+                    <h3>Geographic Visualization</h3>
+                    <p>Scored regions are rendered onto an interactive map using Python's data visualization stack. Color-coded overlays make high-opportunity zones immediately readable, letting users quickly identify and compare markets without digging into raw numbers.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Tech Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">SQL</span>
+                <span class="tech-tag">PostgreSQL</span>
+                <span class="tech-tag">Pandas</span>
+                <span class="tech-tag">Data Visualization</span>
+                <span class="tech-tag">ETL</span>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <h2>Gallery</h2>
+            <div class="gallery-grid">
+                <div class="gallery-placeholder">
+                    <span>🖼️</span>
+                    Coming soon
+                </div>
+                <div class="gallery-placeholder">
+                    <span>🖼️</span>
+                    Coming soon
+                </div>
+                <div class="gallery-placeholder">
+                    <span>🖼️</span>
+                    Coming soon
+                </div>
+            </div>
+        </div>
+
+        <div class="detail-section fade-in">
+            <div class="project-detail-links">
+                <a href="https://github.com/RyanDewey/meridian" target="_blank" class="project-link">View Code</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Ryan Dewey.</p>
+    </footer>
+</body>
+</html>
