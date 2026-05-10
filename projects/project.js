@@ -20,6 +20,37 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 
+// Gallery carousel
+document.addEventListener('DOMContentLoaded', () => {
+    const carousel = document.querySelector('.gallery-carousel');
+    if (!carousel) return;
+
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    let current = 0;
+    let timer;
+
+    function goTo(index) {
+        slides[current].classList.remove('active');
+        if (dots[current]) dots[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        if (dots[current]) dots[current].classList.add('active');
+        resetTimer();
+    }
+
+    function resetTimer() {
+        clearInterval(timer);
+        timer = setInterval(() => goTo(current + 1), 15000);
+    }
+
+    carousel.querySelector('.carousel-btn--prev').addEventListener('click', () => goTo(current - 1));
+    carousel.querySelector('.carousel-btn--next').addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+    resetTimer();
+});
+
 // Hamburger menu
 document.addEventListener('DOMContentLoaded', () => {
     const nav = document.querySelector('.nav');

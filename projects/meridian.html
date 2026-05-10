@@ -39,11 +39,28 @@
 
     <div class="project-detail-body">
 
-        <div class="project-detail-video-wrapper fade-in">
-            <video autoplay loop muted playsinline>
-                <source src="../videos/MeridianDemo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+        <div class="gallery-carousel fade-in">
+            <button class="carousel-btn carousel-btn--prev" aria-label="Previous slide">&#8249;</button>
+            <div class="carousel-track">
+                <div class="carousel-slide active">
+                    <video autoplay loop muted playsinline>
+                        <source src="../videos/MeridianDemo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="carousel-slide">
+                    <img src="../images/cruxCompTeam.jpg" alt="Group picture of Crux Comp Team">
+                </div>
+                <div class="carousel-slide">
+                    <img src="../images/cruxCompTeam.jpg" alt="Group picture of Crux Comp Team">
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn--next" aria-label="Next slide">&#8250;</button>
+            <div class="carousel-dots">
+                <button class="carousel-dot active" aria-label="Slide 1"></button>
+                <button class="carousel-dot" aria-label="Slide 2"></button>
+                <button class="carousel-dot" aria-label="Slide 3"></button>
+            </div>
         </div>
 
         <div class="detail-section fade-in">
@@ -79,24 +96,6 @@
         </div>
 
         <div class="detail-section fade-in">
-            <h2>Gallery</h2>
-            <div class="gallery-grid">
-                <div class="gallery-placeholder">
-                    <span>🖼️</span>
-                    Coming soon
-                </div>
-                <div class="gallery-placeholder">
-                    <span>🖼️</span>
-                    Coming soon
-                </div>
-                <div class="gallery-placeholder">
-                    <span>🖼️</span>
-                    Coming soon
-                </div>
-            </div>
-        </div>
-
-        <div class="detail-section fade-in">
             <div class="project-detail-links">
                 <a href="https://github.com/RyanDewey/meridian" target="_blank" class="project-link">View Code</a>
             </div>
@@ -105,7 +104,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2025 Ryan Dewey.</p>
+        <p>&copy; 2026 Ryan Dewey.</p>
     </footer>
 </body>
 </html>
